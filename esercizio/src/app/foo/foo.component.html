@@ -1,7 +1,26 @@
 <h2>Basic Request</h2>
 <button type="button" (click)="makeRequest()">Make Request</button>
-@if(loading)
-{
-    <div>loading...</div>
+@if(loading) {
+<div>loading...</div>
 }
-<pre>{{data | json}}</pre>
+<pre>{{ data | json }}</pre>
+
+<hr />
+
+<button type="button" (click)="makePost()">Make Post</button>
+
+<hr />
+
+<button type="button" (click)="makeTypedRequest()">Make typed request</button>
+
+<!--Uso un ciclo for per scandire tutta la lista di articoli-->
+@for(art of fooData; track art) {
+<div>
+  <h3>{{ art.title }}</h3>
+  <b>post {{ art.id }} di utente #: {{ art.userId }}</b>
+  <div>
+    {{ art.body }}
+  </div>
+  <hr />
+</div>
+}
